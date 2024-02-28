@@ -7,8 +7,8 @@ if(ch == '1'):
     if(password == Cpassword):
         string=""
         file = open('cre.txt', 'a')
-        string+=f',{user}'
-        string+=f',{Cpassword}'
+        string+=f",{user}"
+        string+=f",{Cpassword}"
 
         file.write(string)
         file.close()
@@ -16,12 +16,12 @@ if(ch == '1'):
 elif(ch == '2'):
     #reading file
     file = open('cre.txt','r')
-    temp = ''
+    temp =''
     for x in file.read():
         temp+=x
-    temp = temp.split(',')
+    temp = temp.split(",")
     mydict = {}
-    for x in range(0,len(temp),2):
+    for x in range(1,len(temp),2):
         mydict[temp[x]]=temp[x+1]
     
     user = input("Enter user name: ")
@@ -34,4 +34,3 @@ elif(ch == '2'):
         print("Login Success")
     else:
         print("Failed")
-
